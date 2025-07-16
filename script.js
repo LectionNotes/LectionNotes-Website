@@ -4,7 +4,7 @@ let count = 0;
 
 // Fetch the current counter value from the server on page load
 function updateCounterFromServer() {
-    fetch('http://127.0.0.1:5000/counter')
+    fetch('/counter')
         .then(response => response.json())
         .then(data => {
             count = data.counter;
@@ -19,7 +19,7 @@ function updateCounterFromServer() {
 updateCounterFromServer();
 
 btn.addEventListener('click', () => {
-    fetch('http://127.0.0.1:5000/counter', {
+    fetch('/counter', {
         method: 'POST',
     })
     .then(response => response.json())
